@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "cross-env MODE=production node ./config/build/esbuild-config.js",
-    "build:dev": "cross-env MODE=development node ./config/build/esbuild-config.js"
+    "build": "cross-env MODE=production node ./config/build/esbuild-prod.js",
+    "start": "node ./config/build/esbuild-dev.js"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +13,9 @@
   "devDependencies": {
     "cross-env": "^7.0.3",
     "esbuild": "^0.17.16"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
