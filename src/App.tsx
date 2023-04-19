@@ -1,11 +1,14 @@
 import React from 'react';
+// @ts-ignore
+import TestImg from './test.png';
 
 import './index.css';
 
 const App = () => {
   return (
     <div>
-      Hello World !
+      <img src={TestImg} alt='' />
+      Hello World
     </div>
   )
 }
