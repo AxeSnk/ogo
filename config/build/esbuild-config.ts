@@ -1,6 +1,7 @@
 import { BuildOptions } from 'esbuild';
 import path from 'path';
 import { CleanPlugin } from './plugins/CleanPlugin';
+import { HTMLPlugin } from './plugins/HTMLPlugin';
 
 const mode = process.env.MODE || 'development';
 const isDev = mode === 'development';
@@ -19,12 +20,18 @@ const config: BuildOptions = {
   tsconfig: resolveRoot('tsconfig.json'),
   minify: isProd,
   sourcemap: isDev,
+  metafile: true,
   loader: {
     '.png': 'file',
     '.svg': 'file',
     '.jpg': 'file',
   },
-  plugins: [CleanPlugin],
+  plugins: [
+    CleanPlugin,
+    HTMLPlugin({
+      title: 'Test'
+    })
+  ],
 }
 
 export default config;
